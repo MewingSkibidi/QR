@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 140vh;
+    background: linear-gradient(180deg, #0a0f2c 0%, #000814 100%);
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle at center, rgba(0, 120, 255, 0.6), transparent 70%);
+    filter: blur(120px);
+    z-index: -1;
+    animation: pulse 6s infinite alternate;
+    }
+
+    @keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+    }
+
+.container {
+    width: 400px;
+    padding: 25px 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    animation: fade-in-up 1s ease-out;
+}
+
+@keyframes fade-in-up {
+    from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+    }
+    to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    }
+}
+
+.container p {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.container input{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #494949;
+    outline: none;
+    border-radius: 5px;
+    margin: 10px 0 20px;
+}
+
+.container button{
+    width: 100%;
+    height: 50px;
+    background: #00BFFF;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    box-shadow: 0 6px 15px 5px rgba(0,0,0,0.4);
+    cursor: pointer;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.container button:hover{
+    background: #00A3E0;
+}
+
+.container button::after{
+    background: #00BFFF;
+}
+
+#imgBox{
+    width: 200px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+#imgBox img{
+    width: 100%;
+    padding: 10px;
+}
+
+#imgBox.show-img{
+    max-height: 300px;
+    margin: 10px;
+    border: 1px solid #d1d1d1;
+}
